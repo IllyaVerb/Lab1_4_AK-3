@@ -4,7 +4,7 @@
 #define NZK #0x8205
 
 .section .rodata
-	res_f: .asciz "\nResult F = 2(X1 & _X2 + X3) - 16(X4 + 1) in PK:"
+	res_f: .asciz "Result F = 2(X1 & _X2 + X3) - 16(X4 + 1) in PK:"
 	reg_f: .asciz "First reg:\t"
 	reg_s: .asciz "Second reg:\t"
 
@@ -58,8 +58,8 @@ lab1:
 
 // 2(X1 & _X2 + X3)
 	lsls r3, r1, #1
-	adc r2, #0
 	lsl r2, r0, #1
+	adc r2, #0
 	
 // to DK
 	mov r5, r2
@@ -77,8 +77,8 @@ lab1:
 
 // 2(X4 + 1)
 	lsls r3, #1
-	adc r2, #0
 	lsl r2, r2, #1
+	adc r2, #0
 	
 	cmp r2, 0
 	IT LT
@@ -86,8 +86,8 @@ lab1:
 	
 // 4(X4 + 1)
 	lsls r3, #1
-	adc r2, #0
 	lsl r2, r2, #1
+	adc r2, #0
 	
 	cmp r2, 0
 	IT LT
@@ -95,8 +95,8 @@ lab1:
 	
 // 8(X4 + 1)
 	lsls r3, #1
-	adc r2, #0
 	lsl r2, r2, #1
+	adc r2, #0
 	
 	cmp r2, 0
 	IT LT
@@ -104,8 +104,8 @@ lab1:
 	
 // 16(X4 + 1)
 	lsls r3, #1
-	adc r2, #0
 	lsl r2, r2, #1
+	adc r2, #0
 	
 	cmp r2, 0
 	IT LT
